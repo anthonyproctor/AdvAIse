@@ -5,10 +5,10 @@
 - [x] Files committed to Git
 - [x] .gitignore file created
 
-## 🔄 GitHub Setup (Next Steps)
-- [ ] Create GitHub repository at github.com
-- [ ] Add remote origin: `git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
-- [ ] Push to GitHub: `git push -u origin main`
+## ✅ GitHub Setup (Completed)
+- [x] Create GitHub repository at github.com
+- [x] Add remote origin: `git remote add origin https://github.com/anthonyproctor/AdvAIse.git`
+- [x] Push to GitHub: `git push -u origin main`
 
 ## 🚀 Netlify Deployment (After GitHub)
 - [ ] Sign up/in to netlify.com
@@ -43,6 +43,6 @@ git remote -v
 - [ ] Test form submissions
 - [ ] Share live URL for feedback
 
-## 🌐 Live URLs (Update after deployment)
-- **GitHub Repository**: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
-- **Live Site**: https://YOUR_SITE_NAME.netlify.app
+## 🌐 Live URLs
+- **GitHub Repository**: https://github.com/anthonyproctor/AdvAIse
+- **Live Site**: (Update after Netlify deployment)
