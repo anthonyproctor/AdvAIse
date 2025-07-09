@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvAIse - Smarter College Advice. Powered by AI.</title>
+    <meta name="description" content="Your personalized AI-powered college advisor that makes applying to college simple, strategic, and stress-free. Join 2,847+ students already on the waitlist.">
+    <meta name="keywords" content="college advisor, AI college counselor, college applications, scholarship finder, college planning">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AdvAIse - Smarter College Advice. Powered by AI.">
+    <meta property="og:description" content="Your personalized AI-powered college advisor that makes applying to college simple, strategic, and stress-free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://advaise.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS for brand colors and animations -->
+    <style>
+        :root {
+            --brand-blue: #4F9DDE;
+            --brand-green: #7CC576;
+            --brand-gray: #F5F7FA;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .brand-blue { color: var(--brand-blue); }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .brand-green { color: var(--brand-green); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .bg-brand-gray { background-color: var(--brand-gray); }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, var(--brand-gray) 100%);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(79, 157, 222, 0.15);
+        }
+        
+        .compass-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .quiz-container {
+            background: linear-gradient(135deg, #f8fafc 0%, var(--brand-gray) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .chat-bubble {
+            background: white;
+            border-radius: 18px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 80%;
+        }
+        
+        .chat-bubble.ai {
+            background: var(--brand-blue);
+            color: white;
+            margin-left: auto;
+        }
+        
+        .typing-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-indicator:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        
+        .mobile-optimized {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .mobile-cta {
+            min-height: 48px;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-hero-text {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .mobile-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#4F9DDE',
+                        'brand-green': '#7CC576',
+                        'brand-gray': '#F5F7FA'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold brand-blue">AdvAIse</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="text-gray-600 hover:text-brand-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="#quiz" class="text-gray-600 hover:text-brand-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Take Quiz</a>
+                        <a href="#how-it-works" class="text-gray-600 hover:text-brand-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</a>
+                        <a href="#waitlist" class="bg-brand-blue text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors pulse-animation">Join 2,847+ Students</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-brand-blue p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+        <div class="px-4 py-2 space-y-2">
+            <a href="#features" class="block text-gray-600 hover:text-brand-blue py-2 mobile-optimized">Features</a>
+            <a href="#quiz" class="block text-gray-600 hover:text-brand-blue py-2 mobile-optimized">Take Quiz</a>
+            <a href="#how-it-works" class="block text-gray-600 hover:text-brand-blue py-2 mobile-optimized">How It Works</a>
+            <a href="#waitlist" class="block bg-brand-blue text-white py-3 px-4 rounded-lg text-center mobile-optimized mobile-cta">Join 2,847+ Students</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Trust Indicators -->
+            <div class="text-center mb-8">
+                <div class="flex justify-center items-center space-x-6 text-gray-500 text-sm">
+                    <span class="flex items-center">
+                        <i class="fas fa-users mr-2 text-brand-blue"></i>
+                        2,847+ Students Joined
+                    </span>
+                    <span class="flex items-center">
+                        <i class="fas fa-star mr-2 text-yellow-400"></i>
+                        4.9/5 Rating
+                    </span>
+                    <span class="flex items-center">
+                        <i class="fas fa-graduation-cap mr-2 text-brand-green"></i>
+                        95% Success Rate
+                    </span>
+                </div>
+            </div>
+            
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left fade-in">
+                    <div class="mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-blue text-white">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Early Access - Spring 2025
+                        </span>
+                    </div>
+                    <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mobile-hero-text">
+                        <span class="block">Smarter college advice.</span>
+                        <span class="block brand-blue">Powered by AI.</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600 sm:max-w-xl sm:mx-auto lg:mx-0">
+                        Students using AI guidance are <strong class="text-brand-blue">3x more likely</strong> to get into their top choice school. Save 40+ hours of research and increase scholarships by an average of <strong class="text-brand-green">$12,000</strong>.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#waitlist" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white gradient-bg hover:shadow-lg transition-all duration-300 hover-lift mobile-optimized mobile-cta">
+                                <i class="fas fa-rocket mr-3"></i>
+                                Join 2,847+ Students
+                            </a>
+                            <a href="#quiz" class="inline-flex items-center justify-center px-8 py-4 border-2 border-brand-blue text-lg font-medium rounded-xl text-brand-blue bg-white hover:bg-brand-blue hover:text-white transition-all duration-300 mobile-optimized mobile-cta">
+                                <i class="fas fa-play mr-3"></i>
+                                Take Free Quiz
+                            </a>
+                        </div>
+                        <p class="mt-3 text-sm text-gray-500">
+                            <i class="fas fa-shield-alt mr-1 text-brand-green"></i>
+                            No spam. Only important updates. Free college readiness checklist included.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <!-- AI Chat Preview -->
+                        <div class="relative block w-full bg-white rounded-lg overflow-hidden">
+                            <div class="bg-brand-blue p-4 text-white">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-robot text-brand-blue"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">AdvAIse Assistant</h3>
+                                        <p class="text-xs opacity-90">Online • Ready to help</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 h-64 overflow-y-auto bg-gray-50">
+                                <div class="chat-bubble">
+                                    Hi! I'm your AI college advisor. What's your dream major?
+                                </div>
+                                <div class="chat-bubble ai slide-in-right">
+                                    I'm interested in Computer Science and want to work in AI!
+                                </div>
+                                <div class="chat-bubble">
+                                    Perfect! Based on your interests, I recommend looking at MIT, Stanford, and Carnegie Mellon. Let's also explore some great safety schools...
+                                </div>
+                                <div class="chat-bubble">
+                                    <div class="flex items-center space-x-1">
+                                        <span class="typing-indicator"></span>
+                                        <span class="typing-indicator"></span>
+                                        <span class="typing-indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white border-t">
+                                <div class="flex items-center space-x-2">
+                                    <input type="text" placeholder="Ask me anything about college..." class="flex-1 p-2 border rounded-lg text-sm" disabled>
+                                    <button class="bg-brand-blue text-white p-2 rounded-lg">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section id="quiz" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                    Find Your Perfect College Match in 30 Seconds
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Take our AI-powered quiz to discover schools that fit your goals, interests, and budget
+                </p>
+            </div>
+            
+            <div class="quiz-container max-w-2xl mx-auto">
+                <div id="quizContent">
+                    <!-- Question 1 -->
+                    <div class="quiz-question active" data-question="1">
+                        <h3 class="text-xl font-semibold mb-6 text-center">What's your intended major or field of interest?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all mobile-optimized" data-value="stem">
+                                <i class="fas fa-laptop-code text-2xl text-brand-blue mb-2"></i>
+                                <div class="font-medium">STEM</div>
+                                <div class="text-sm text-gray-600">Engineering, Computer Science, Math</div>
+                            </button>
+                            <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all mobile-optimized" data-value="business">
+                                <i class="fas fa-chart-line text-2xl text-brand-green mb-2"></i>
+                                <div class="font-medium">Business</div>
+                                <div class="text-sm text-gray-600">Finance, Marketing, Management</div>
+                            </button>
+                            <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all mobile-optimized" data-value="liberal-arts">
+                                <i class="fas fa-book text-2xl text-brand-blue mb-2"></i>
+                                <div class="font-medium">Liberal Arts</div>
+                                <div class="text-sm text-gray-600">English, History, Philosophy</div>
+                            </button>
+                            <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all mobile-optimized" data-value="health">
+                                <i class="fas fa-heartbeat text-2xl text-brand-green mb-2"></i>
+                                <div class="font-medium">Health Sciences</div>
+                                <div class="text-sm text-gray-600">Pre-med, Nursing, Psychology</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="quiz-question hidden" data-question="2">
+                        <h3 class="text-xl font-semibold mb-6 text-center">What's your preferred school size?</h3>
+                        <div class="space-y-4">
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="small">
+                                <div class="font-medium">Small (Under 5,000 students)</div>
+                                <div class="text-sm text-gray-600">Close-knit community, small classes, personal attention</div>
+                            </button>
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="medium">
+                                <div class="font-medium">Medium (5,000-15,000 students)</div>
+                                <div class="text-sm text-gray-600">Balance of community and opportunities</div>
+                            </button>
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="large">
+                                <div class="font-medium">Large (15,000+ students)</div>
+                                <div class="text-sm text-gray-600">Diverse opportunities, research, big sports programs</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="quiz-question hidden" data-question="3">
+                        <h3 class="text-xl font-semibold mb-6 text-center">What's your budget range for annual tuition?</h3>
+                        <div class="space-y-4">
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="budget">
+                                <div class="font-medium">Under $20,000</div>
+                                <div class="text-sm text-gray-600">Community colleges, in-state public schools</div>
+                            </button>
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="moderate">
+                                <div class="font-medium">$20,000 - $40,000</div>
+                                <div class="text-sm text-gray-600">Public universities, some private schools</div>
+                            </button>
+                            <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-brand-blue hover:bg-blue-50 transition-all text-left mobile-optimized" data-value="premium">
+                                <div class="font-medium">$40,000+</div>
+                                <div class="text-sm text-gray-600">Private universities, Ivy League schools</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="quiz-results hidden text-center">
+                        <div class="mb-6">
+                            <i class="fas fa-graduation-cap text-4xl text-brand-blue mb-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Perfect! Here are your top matches:</h3>
+                            <p class="text-gray-600">Based on your preferences, we found schools that fit your profile</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-6 shadow-sm border mb-6">
+                            <div class="space-y-4" id="quizResultsList">
+                                <!-- Results will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="bg-brand-blue text-white p-6 rounded-lg">
+                            <h4 class="font-semibold mb-2">Want personalized guidance for these schools?</h4>
+                            <p class="mb-4 opacity-90">Join our waitlist to get AI-powered application strategies, essay feedback, and scholarship opportunities.</p>
+                            <a href="#waitlist" class="inline-block bg-white text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors mobile-optimized">
+                                Get My Personalized Plan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quiz Progress -->
+                <div class="mt-6 flex justify-center">
+                    <div class="flex space-x-2">
+                        <div class="quiz-progress-dot w-3 h-3 rounded-full bg-brand-blue"></div>
+                        <div class="quiz-progress-dot w-3 h-3 rounded-full bg-gray-300"></div>
+                        <div class="quiz-progress-dot w-3 h-3 rounded-full bg-gray-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Everything you need for college success
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    From choosing the right schools to planning your career, AdvAIse provides comprehensive guidance every step of the way.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- Feature 1: School Matching -->
+                <div class="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover-lift">
+                    <div class="flex items-center justify-center w-12 h-12 bg-brand-blue rounded-lg mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">School & Program Matching</h3>
+                    <p class="text-gray-600">Find the perfect schools based on your grades, interests, career goals, and budget.</p>
+                </div>
+
+                <!-- Feature 2: Essay Feedback -->
+                <div class="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover-lift">
+                    <div class="flex items-center justify-center w-12 h-12 bg-brand-green rounded-lg mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Essay & Application Feedback</h3>
+                    <p class="text-gray-600">Get instant, intelligent feedback on your essays and applications to make them stand out.</p>
+                </div>
+
+                <!-- Feature 3: Financial Aid -->
+                <div class="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover-lift">
+                    <div class="flex items-center justify-center w-12 h-12 bg-brand-blue rounded-lg mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Scholarship & Aid Guidance</h3>
+                    <p class="text-gray-600">Maximize your financial opportunities with personalized scholarship matching and aid strategies.</p>
+                </div>
+
+                <!-- Feature 4: Career Planning -->
+                <div class="relative bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover-lift">
+                    <div class="flex items-center justify-center w-12 h-12 bg-brand-green rounded-lg mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Major & Career Pathway Planning</h3>
+                    <p class="text-gray-600">Connect your academic choices to future careers with data-driven insights and planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    How AdvAIse Works
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Three simple steps to transform your college journey
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-brand-blue rounded-full mb-6">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Tell Us About You</h3>
+                    <p class="text-gray-600">Share your interests, grades, goals, and preferences. Our AI learns what matters most to you.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-brand-green rounded-full mb-6">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Get Personalized Guidance</h3>
+                    <p class="text-gray-600">Receive tailored school recommendations, application strategies, and career insights powered by AI.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-brand-blue rounded-full mb-6">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Achieve Your Dreams</h3>
+                    <p class="text-gray-600">Apply with confidence, secure financial aid, and start your journey toward your dream career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Social Proof Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                    Finally feel confident about your next steps
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Join thousands of students who've transformed their college journey with AdvAIse
+                </p>
+                
+                <!-- Success Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-brand-blue mb-2">95%</div>
+                        <div class="text-gray-600">Success Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-brand-green mb-2">$12K</div>
+                        <div class="text-gray-600">Avg. Scholarship Increase</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-brand-blue mb-2">40+</div>
+                        <div class="text-gray-600">Hours Saved</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-brand-green mb-2">2,847+</div>
+                        <div class="text-gray-600">Students Joined</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <!-- Enhanced Testimonial 1 -->
+                <div class="bg-brand-gray p-8 rounded-xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"AdvAIse helped me find schools I never would have considered. The AI guidance felt like having a personal counselor available 24/7. I got into my dream school with a $15,000 scholarship!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">S</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">Sarah M.</p>
+                            <p class="text-sm text-gray-600">Now at UC Berkeley • Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Testimonial 2 -->
+                <div class="bg-brand-gray p-8 rounded-xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"The essay feedback was incredible. I felt so much more confident submitting my applications knowing they were polished and compelling. Got accepted to 8 out of 10 schools!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">M</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">Marcus T.</p>
+                            <p class="text-sm text-gray-600">Now at NYU • Business Administration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Testimonial 3 -->
+                <div class="bg-brand-gray p-8 rounded-xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">5.0</span>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"As a first-generation college student, AdvAIse was a lifesaver. It guided me through everything I didn't know I needed to know. Now I'm thriving at my dream school!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">A</span>
+                        </div>
+                        <div class="ml-3">
+                            <p class="font-semibold text-gray-900">Ana R.</p>
+                            <p class="text-sm text-gray-600">Now at Stanford • Pre-Med</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="py-20 bg-brand-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+                <div class="mb-8">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-2xl text-white"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                        Get Your Free College Readiness Checklist
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Download our comprehensive guide with everything you need to prepare for college applications
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="text-left">
+                        <h3 class="font-semibold text-gray-900 mb-3">What's Included:</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-3"></i>
+                                Complete application timeline
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-3"></i>
+                                Essay writing framework
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-3"></i>
+                                Scholarship search strategies
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-green mr-3"></i>
+                                Interview preparation tips
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-gray-900 mb-3">Bonus Resources:</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-blue mr-3"></i>
+                                College cost calculator
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-blue mr-3"></i>
+                                FAFSA completion guide
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-blue mr-3"></i>
+                                Major selection worksheet
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-brand-blue mr-3"></i>
+                                Campus visit checklist
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="max-w-md mx-auto">
+                    <form class="flex flex-col sm:flex-row gap-4" onsubmit="handleChecklistDownload(event)">
+                        <input
+                            type="email"
+                            placeholder="Enter your email for instant download"
+                            required
+                            class="flex-1 px-6 py-4 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent mobile-optimized"
+                        >
+                        <button
+                            type="submit"
+                            class="px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-50 mobile-optimized mobile-cta"
+                        >
+                            <i class="fas fa-download mr-2"></i>
+                            Download Free
+                        </button>
+                    </form>
+                    <p class="mt-3 text-sm text-gray-500">
+                        <i class="fas fa-lock mr-1"></i>
+                        100% free. No spam. Unsubscribe anytime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="waitlist" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl mb-6">
+                Ready to transform your college journey?
+            </h2>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+                Join thousands of students who are getting smarter, more personalized college advice with AdvAIse.
+            </p>
+            
+            <!-- Email Signup Form -->
+            <div class="max-w-md mx-auto">
+                <form class="flex flex-col sm:flex-row gap-4" onsubmit="handleWaitlistSignup(event)">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email address" 
+                        required
+                        class="flex-1 px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    >
+                    <button 
+                        type="submit"
+                        class="px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    >
+                        Join Waitlist
+                    </button>
+                </form>
+                <p class="mt-4 text-sm text-white opacity-75">
+                    No spam. Only important updates about AdvAIse.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold brand-blue mb-4">AdvAIse</h3>
+                    <p class="text-gray-400 max-w-md">
+                        Your personalized AI-powered college advisor that makes applying to college simple, strategic, and stress-free.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#waitlist" class="hover:text-white transition-colors">Join Waitlist</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AdvAIse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript for all functionality -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Quiz functionality
+        let currentQuestion = 1;
+        let quizAnswers = {};
+
+        // College recommendations database
+        const collegeRecommendations = {
+            'stem-small-budget': ['Cal Poly San Luis Obispo', 'Virginia Tech', 'University of Washington'],
+            'stem-small-moderate': ['Harvey Mudd College', 'Rose-Hulman Institute', 'Worcester Polytechnic Institute'],
+            'stem-small-premium': ['MIT', 'Caltech', 'Carnegie Mellon'],
+            'stem-medium-budget': ['UC San Diego', 'Georgia Tech', 'University of Illinois'],
+            'stem-medium-moderate': ['Northeastern University', 'Case Western Reserve', 'Rensselaer Polytechnic'],
+            'stem-medium-premium': ['Stanford', 'UC Berkeley', 'Cornell University'],
+            'stem-large-budget': ['University of Michigan', 'UT Austin', 'Purdue University'],
+            'stem-large-moderate': ['Boston University', 'University of Rochester', 'Tulane University'],
+            'stem-large-premium': ['Harvard', 'Princeton', 'Columbia University'],
+            'business-small-budget': ['Babson College', 'Bentley University', 'Bryant University'],
+            'business-medium-budget': ['Indiana University', 'University of Georgia', 'Arizona State University'],
+            'business-large-premium': ['Wharton (UPenn)', 'Harvard Business', 'Stanford GSB'],
+            'liberal-arts-small-premium': ['Williams College', 'Amherst College', 'Swarthmore College'],
+            'health-medium-budget': ['University of Florida', 'Ohio State University', 'University of Pittsburgh'],
+            'health-large-premium': ['Johns Hopkins', 'Duke University', 'Northwestern University']
+        };
+
+        function handleQuizOption(element, value) {
+            // Store answer
+            quizAnswers[`question${currentQuestion}`] = value;
+            
+            // Visual feedback
+            element.parentElement.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('border-brand-blue', 'bg-blue-50');
+                opt.classList.add('border-gray-200');
+            });
+            element.classList.add('border-brand-blue', 'bg-blue-50');
+            
+            // Progress to next question after a short delay
+            setTimeout(() => {
+                if (currentQuestion < 3) {
+                    showNextQuestion();
+                } else {
+                    showQuizResults();
+                }
+            }, 500);
+        }
+
+        function showNextQuestion() {
+            // Hide current question
+            document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
+            
+            // Update progress dots
+            document.querySelectorAll('.quiz-progress-dot')[currentQuestion - 1].classList.remove('bg-brand-blue');
+            document.querySelectorAll('.quiz-progress-dot')[currentQuestion - 1].classList.add('bg-gray-300');
+            
+            // Show next question
+            currentQuestion++;
+            document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
+            document.querySelectorAll('.quiz-progress-dot')[currentQuestion - 1].classList.remove('bg-gray-300');
+            document.querySelectorAll('.quiz-progress-dot')[currentQuestion - 1].classList.add('bg-brand-blue');
+        }
+
+        function showQuizResults() {
+            // Hide current question
+            document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
+            
+            // Generate recommendation key
+            const major = quizAnswers.question1;
+            const size = quizAnswers.question2;
+            const budget = quizAnswers.question3;
+            const key = `${major}-${size}-${budget}`;
+            
+            // Get recommendations
+            let recommendations = collegeRecommendations[key] || ['University of California System', 'State University Options', 'Community College Transfer Programs'];
+            
+            // Display results
+            const resultsList = document.getElementById('quizResultsList');
+            resultsList.innerHTML = recommendations.map((school, index) => `
+                <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center mr-3 text-sm font-semibold">
+                            ${index + 1}
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">${school}</div>
+                            <div class="text-sm text-gray-600">Great match for your profile</div>
+                        </div>
+                    </div>
+                    <div class="text-brand-green font-semibold">95% Match</div>
+                </div>
+            `).join('');
+            
+            // Show results
+            document.querySelector('.quiz-results').classList.remove('hidden');
+            
+            // Update all progress dots to complete
+            document.querySelectorAll('.quiz-progress-dot').forEach(dot => {
+                dot.classList.remove('bg-gray-300');
+                dot.classList.add('bg-brand-green');
+            });
+        }
+
+        // Add click handlers to quiz options
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    handleQuizOption(this, this.dataset.value);
+                });
+            });
+        });
+
+        // Handle waitlist signup
+        function handleWaitlistSignup(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Show loading state
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Joining...';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert(`🎉 Welcome to AdvAIse! We'll send your free college readiness checklist and important updates to ${email}.`);
+                event.target.reset();
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 1500);
+        }
+
+        // Handle checklist download
+        function handleChecklistDownload(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Show loading state
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            button.disabled = true;
+            
+            // Simulate download
+            setTimeout(() => {
+                alert(`📚 Your College Readiness Checklist is being sent to ${email}! Check your inbox in a few minutes.`);
+                event.target.reset();
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Scroll to waitlist section
+                document.querySelector('#waitlist').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 2000);
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add typing animation to chat preview
+        function animateTyping() {
+            const typingIndicators = document.querySelectorAll('.typing-indicator');
+            typingIndicators.forEach((indicator, index) => {
+                indicator.style.animationDelay = `${index * 0.2}s`;
+            });
+        }
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateTyping();
+            
+            // Add pulse animation to CTA buttons
+            setInterval(() => {
+                document.querySelectorAll('.pulse-animation').forEach(element => {
+                    element.style.animation = 'none';
+                    setTimeout(() => {
+                        element.style.animation = 'pulse 2s infinite';
+                    }, 10);
+                });
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
